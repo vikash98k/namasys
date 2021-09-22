@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ycdzze==hv8%a3!@^bw473h2ix^hn)!n&fb)(%i_m_v$p-*+_9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['user-login-123.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -47,11 +47,13 @@ AUTH_USER_MODEL = 'users.CustomUser'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django_session_timeout.middleware.SessionTimeoutMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -131,5 +133,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL ='login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+TIME= 1*60 # 5 min  
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+SESSION_EXPIRE_AT_BROWSER_CLOSE= True
+SESSION_COOKIE_AGE = TIME    
+SESSION_IDLE_TIMEOUT = TIME  
 
 django_heroku.settings(locals())
