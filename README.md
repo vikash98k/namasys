@@ -1,6 +1,6 @@
 # Namasys Assignment
-    Live at https://user-login-123.herokuapp.com/
 
+https://user-login-123.herokuapp.com/
 ## Local Setup
 * Git clone: git clone https://github.com/vikash98k/namasys.git
 * Go to Project directory: cd project
