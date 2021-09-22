@@ -134,7 +134,7 @@ LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL ='login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-TIME= 1*60 # 5 min  
+TIME= 5*60 # 5 min  
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 SESSION_EXPIRE_AT_BROWSER_CLOSE= True
 SESSION_COOKIE_AGE = TIME    
